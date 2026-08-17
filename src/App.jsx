@@ -1,0 +1,17 @@
+import { Route, Routes } from 'react-router-dom'
+import Layout from './components/Layout'
+import Home from './pages/Home'
+import Experiences from './pages/Experiences'
+import ExperienceDetail from './pages/ExperienceDetail'
+import Packages from './pages/Packages'
+import PackageDetail from './pages/PackageDetail'
+import About from './pages/About'
+import Gallery from './pages/Gallery'
+import Safety from './pages/Safety'
+import FAQ from './pages/FAQ'
+import Contact from './pages/Contact'
+import Booking from './pages/Booking'
+import NotFound from './pages/NotFound'
+import Policy from './pages/Policy'
+
+export default function App(){return <Routes><Route element={<Layout/>}><Route path="/" element={<Home/>}/><Route path="/experiences" element={<Experiences/>}/><Route path="/experiences/:slug" element={<ExperienceDetail/>}/><Route path="/packages" element={<Packages/>}/><Route path="/packages/:slug" element={<PackageDetail/>}/><Route path="/about" element={<About/>}/><Route path="/gallery" element={<Gallery/>}/><Route path="/safety" element={<Safety/>}/><Route path="/faq" element={<FAQ/>}/><Route path="/contact" element={<Contact/>}/><Route path="/booking" element={<Booking/>}/><Route path="/privacy" element={<Policy type="privacy"/>}/><Route path="/terms" element={<Policy type="terms"/>}/><Route path="/cancellation" element={<Policy type="cancellation"/>}/><Route path="*" element={<NotFound/>}/></Route></Routes>}

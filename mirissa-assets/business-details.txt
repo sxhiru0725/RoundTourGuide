@@ -1,0 +1,20 @@
+BUSINESS DETAILS — COMPLETE BEFORE LAUNCH
+
+Brand name: MIRISSA OCEAN ADVENTURES (temporary)
+Tagline: Explore Above. Dive Below.
+Phone:
+WhatsApp:
+Email:
+Meeting point:
+Pickup area:
+Social links:
+Currency:
+Confirmed prices:
+  Snorkeling — 1 guest: USD 35 per person; 2–4 guests: USD 30 per person
+  Kayaking — 1 guest: USD 40 per person; 2–4 guests: USD 30 per person
+  Surf lesson — 1 guest: USD 45 per person; 2–4 guests: USD 35 per person
+  All other activities and packages: price not supplied; display enquiry only
+Crew names and qualifications:
+Cancellation terms:
+
+Add approved photography to the labelled folders. Update src/data/media.js to use the local file paths.
