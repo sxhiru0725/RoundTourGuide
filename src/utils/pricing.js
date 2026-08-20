@@ -2,6 +2,10 @@ export function getPriceForGuests(item, guests) {
   const pricing = item?.pricing
   if (!pricing || pricing.status !== 'confirmed') return { status: 'enquire' }
 
+  if (!Number.isInteger(guests) || guests < 1) {
+    return { status: 'invalid', currency: pricing.currency }
+  }
+
   const tier = pricing.tiers.find(({ minGuests, maxGuests }) => guests >= minGuests && guests <= maxGuests)
   if (!tier) return { status: 'unsupported', currency: pricing.currency }
 
@@ -11,6 +15,9 @@ export function getPriceForGuests(item, guests) {
     perPerson: tier.perPerson,
     total: tier.perPerson * guests,
     guests,
+    rateType: tier.minGuests === tier.maxGuests
+      ? `Solo Rate (${tier.minGuests} person)`
+      : `Group Rate (${tier.minGuests}–${tier.maxGuests} people)`,
   }
 }
 

@@ -9,6 +9,7 @@ import { experiences } from '../data/experiences'
 import { packages } from '../data/packages'
 import { gallery, team, testimonials } from '../data/content'
 import { media } from '../data/media'
+import { getTodayValue } from '../utils/forms'
 
 const marine = [
   ['Blue whale', 'The largest animal on Earth visits the deep waters off Sri Lanka.', media.whale],
@@ -28,8 +29,8 @@ export default function Home() {
     <div className="container search-wrap"><form className="adventure-search" onSubmit={submit}>
       <div className="search-title"><Search /><span><small>Start here</small>Find your adventure</span></div>
       <label><span>Experience</span><div><Waves size={18} /><select value={search.experience} onChange={(e) => setSearch({ ...search, experience: e.target.value })}>{experiences.map((x) => <option key={x.slug} value={x.slug}>{x.shortTitle}</option>)}</select><ChevronDown size={16} /></div></label>
-      <label><span>Date</span><div><CalendarDays size={18} /><input type="date" value={search.date} onChange={(e) => setSearch({ ...search, date: e.target.value })} /></div></label>
-      <label><span>Guests</span><div><Users size={18} /><select value={search.guests} onChange={(e) => setSearch({ ...search, guests: e.target.value })}>{[1,2,3,4,5,6,7,8].map((n) => <option key={n}>{n}</option>)}</select><ChevronDown size={16} /></div></label>
+      <label><span>Date</span><div><CalendarDays size={18} /><input type="date" min={getTodayValue()} value={search.date} onChange={(e) => setSearch({ ...search, date: e.target.value })} /></div></label>
+      <label><span>Guests</span><div><Users size={18} /><select value={search.guests} onChange={(e) => setSearch({ ...search, guests: e.target.value })}>{[1,2,3,4,5,6,7,8].map((n) => <option key={n} value={n}>{n}{n === 5 ? ' (custom quote)' : ''}</option>)}</select><ChevronDown size={16} /></div></label>
       <button className="button button--navy">Find adventure <ArrowRight size={18} /></button>
     </form></div>
 

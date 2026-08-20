@@ -1,4 +1,4 @@
-import { media } from './media'
+import { media } from './media.js'
 
 export const packages = [
   { slug: 'ocean-starter', title: 'Ocean Starter', duration: '1 Day', pricing: { status: 'enquire', currency: 'USD' }, image: media.kayak, idealFor: 'First-time ocean explorers', summary: 'A perfectly paced introduction to Mirissa above and below the water.', days: [['Morning', 'Turtle snorkeling and reef discovery'], ['Afternoon', 'Coastal kayaking'], ['Golden hour', 'Sunset experience']] },
